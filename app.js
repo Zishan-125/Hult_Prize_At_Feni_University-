@@ -114,9 +114,10 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 });
 
 // ─── Contact Form Submission ──────────────────
+// ─── Contact Form Submission (FIXED FOR FORMSPREE) ──────────
 if (contactForm) {
-  contactForm.addEventListener('submit', (e) => {
-    e.preventDefault();
+  contactForm.addEventListener('submit', async (e) => {
+    e.preventDefault(); // Stop page reload
 
     const btn = contactForm.querySelector('.btn-primary');
     const originalText = btn.querySelector('span').textContent;
@@ -125,16 +126,43 @@ if (contactForm) {
     btn.disabled = true;
     btn.querySelector('span').textContent = 'Sending…';
 
-    // Simulate async submission (replace with real API call)
-    setTimeout(() => {
+    // Get the data from the form
+    const formData = new FormData(contactForm);
+
+    try {
+      const response = await fetch(contactForm.action, {
+        method: 'POST',
+        body: formData,
+        headers: {
+          'Accept': 'application/json'
+        }
+      });
+
+      if (response.ok) {
+        // Success
+        contactForm.reset();
+        formSuccess.classList.add('show');
+        btn.querySelector('span').textContent = 'Success!';
+        
+        // Hide success message after 5 seconds
+        setTimeout(() => {
+          formSuccess.classList.remove('show');
+          btn.querySelector('span').textContent = originalText;
+          btn.disabled = false;
+        }, 5000);
+      } else {
+        // Formspree error
+        const errorData = await response.json();
+        alert(errorData.errors ? errorData.errors[0].message : "Submission failed.");
+        btn.disabled = false;
+        btn.querySelector('span').textContent = originalText;
+      }
+    } catch (error) {
+      // Network error
+      alert("Connectivity error. Please check your internet connection.");
       btn.disabled = false;
       btn.querySelector('span').textContent = originalText;
-      contactForm.reset();
-
-      // Show success
-      formSuccess.classList.add('show');
-      setTimeout(() => formSuccess.classList.remove('show'), 5000);
-    }, 1600);
+    }
   });
 }
 
