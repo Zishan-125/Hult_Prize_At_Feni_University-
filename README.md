@@ -1,37 +1,35 @@
 # 🏆 Project Name: Hult Prize at Feni University Platform
-### *A high-performance PERN solution for managing campus-level innovation and startup competitions*
+### *A responsive frontend platform for managing campus-level innovation and startup competitions*
 
 [![Hult Prize](https://img.shields.io/badge/Hult%20Prize-2026-E8006A)](https://www.hultprize.org/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
-[![Stack: PERN](https://img.shields.io/badge/Stack-PERN-green)](https://www.postgresql.org/)
-[![Status: Development](https://img.shields.io/badge/Status-Active-orange)]()
+[![Stack: Frontend](https://img.shields.io/badge/Stack-HTML%2FCSS%2FJS-green)]()
+[![Status: Active](https://img.shields.io/badge/Status-Active-orange)]()
 
 ---
 
 ## 🚀 Vision & Problem Statement
-Empowering students at Feni University to transform innovative ideas into impactful startups through a centralized digital platform.  
-This project simplifies event management, team collaboration, and startup evaluation for Hult Prize competitions.
+Empowering students at Feni University to explore and participate in innovation-driven competitions through a simple and accessible digital platform.  
+This project provides a clean and responsive interface for showcasing Hult Prize activities and engagement.
 
 ---
 
 ## ✨ Core Features
-- **Startup Submission System**: Teams can submit and manage their ideas seamlessly.
-- **AI-Powered Insights**: Integrated with Google Gemini API for idea validation and feedback.
-- **Real-time Dashboard**: Track submissions, progress, and evaluation status.
-- **Secure Authentication**: Role-based access for participants, organizers, and judges.
+- **Responsive Landing Page**: Works across mobile, tablet, and desktop devices  
+- **Modern UI Design**: Clean layout with smooth user experience  
+- **Event Showcase**: Highlights Hult Prize activities and initiatives  
+- **Fast Performance**: Lightweight and optimized frontend  
 
 ---
 
 ## 🛠 Tech Stack
 | Layer | Technologies |
 | :--- | :--- |
-| **Frontend** | React.js, Vite, Tailwind CSS, Framer Motion |
-| **Backend** | Node.js, Express.js |
-| **Database** | PostgreSQL (Sequelize ORM) |
-| **AI Integration** | Google Gemini AI API |
-| **Deployment** | Netlify (Frontend), Render (Backend) |
+| **Frontend** | HTML5, CSS3, JavaScript |
+| **Deployment** | Netlify |
 
 ---
+
 
 ## 🏗 System Architecture
 Designed with scalability and Clean Architecture principles.
@@ -66,6 +64,7 @@ npm install
 npm run dev
 🌐 Live Demo
 👉 https://hultprizeatfeniuniversity.netlify.app/⁠�
+```
 👨‍💻 Author
 Abdullah Al Mamun Zishan
 CSE, Feni University
