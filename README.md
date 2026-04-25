@@ -62,9 +62,10 @@ npm install
 ```
 ```bash
 npm run dev
+```
 🌐 Live Demo
 👉 https://hultprizeatfeniuniversity.netlify.app/⁠�
-```
+
 👨‍💻 Author
 Abdullah Al Mamun Zishan
 CSE, Feni University
