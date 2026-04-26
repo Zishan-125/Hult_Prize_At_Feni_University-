@@ -250,6 +250,7 @@ body {
 }
 
 /* --- Layer 1: The Image Slider (Background Swap) --- */
+/* --- Layer 1: The Image Slider (Fixed Rotation) --- */
 .hero-image-wrap {
   position: absolute;
   inset: 0;
@@ -261,29 +262,30 @@ body {
   inset: 0;
   background-size: cover;
   background-position: center;
-  /* Cinematic tint for text readability */
   filter: brightness(0.35) contrast(1.1) saturate(0.8);
-  animation: heroCrossfade 12s infinite;
+  /* Increased duration to 21s for 7 images (3s each) */
+  animation: heroCrossfade 21s infinite; 
+  opacity: 0; /* Default to hidden */
   transition: transform 0.5s ease-out;
 }
 
-.img-1 {
-  background-image: url('Hero_Hult.jpg');
-}
-
-.img-2 {
-  background-image: url('Hero_Hult2.jpg');
-  animation-delay: 6s;
-  opacity: 0;
-}
+/* Staggered Delays (Total Duration / Number of Images) */
+.img-1 { background-image: url('Hero_Hult.jpg');  animation-delay: 0s; }
+.img-2 { background-image: url('Hero_Hult2.jpg'); animation-delay: 3s; }
+.img-3 { background-image: url('Hero_Hult3.jpg'); animation-delay: 6s; }
+.img-4 { background-image: url('Hero_Hult4.jpg'); animation-delay: 9s; }
+.img-5 { background-image: url('Hero_Hult5.jpg'); animation-delay: 12s; }
+.img-6 { background-image: url('Hero_Hult6.jpg'); animation-delay: 15s; }
+.img-7 { background-image: url('Hero_Hult7.jpg'); animation-delay: 18s; }
 
 @keyframes heroCrossfade {
   0% { opacity: 0; }
-  10% { opacity: 1; }  /* Fade in */
-  45% { opacity: 1; }  /* Stay visible */
-  55% { opacity: 0; }  /* Fade out */
-  100% { opacity: 0; } 
+  5% { opacity: 1; }   /* Fade In */
+  14% { opacity: 1; }  /* Visible (roughly 3 seconds) */
+  19% { opacity: 0; }  /* Fade Out */
+  100% { opacity: 0; }
 }
+
 
 /* --- Layer 2: Brand Glows & Tech Grid --- */
 .hero-bg-pattern {
